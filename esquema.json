@@ -1,39 +1,29 @@
 {
-    "$sonSchema":{
-      "bsonType": "array",
-      "minItems": 1,
-      "items": {
-        "bsonType": "object",
-        "required": [
-          "_id",
-          "titulo",
-          "autor",
-          "ano",
-          "preco"
-        ],
-        "properties": {
-          "_id": {
-            "bsonType": "int",
-            "description": "deve ser um inteiro obrigatório"
-          },
-          "titulo": {
-            "bsonType": "string",
-            "description": "deve ser uma string obrigatório"
-          },
-          "autor": {
-            "bsonType": "string",
-            "description": "deve ser uma string  obrigatório"
-          },
-          "ano": {
-            "bsonType": "int",
-            "minimum": 0,
-            "maximum": 2024,
-            "description": "deve ser um inteiro entre 0 e 2024 obrigatório"
-          },
-          "preco": {
-            "bsonType": "double",
-            "description": "deve ser um double obrigatório"
-          }
+    "$jsonSchema": {
+      "bsonType": "object",
+      "required": ["id", "titulo", "autor", "ano", "preco"],
+      "properties": {
+        "id": {
+          "bsonType": "int",
+          "description": "ID do livro como número inteiro "
+        },
+        "titulo": {
+          "bsonType": "string",
+          "description": "Título do livro ( string obrigatório)"
+        },
+        "autor": {
+          "bsonType": "string",
+          "description": "Autor do livro (string obrigatória)"
+        },
+        "ano": {
+          "bsonType": "int",
+          "minimum": 1000,
+          "maximum": 2023,
+          "description": "Ano de publicação do livro (inteiro entre 1000 e 2023, numero int obrigatório)"
+        },
+        "preco": {
+          "bsonType": "double",
+          "description": "Preço do livro (double obrigatorio)"
         }
       }
     }
